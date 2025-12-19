@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* RTL support */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Dark mode */
+html.dark {
+  color-scheme: dark;
+}

@@ -1,0 +1,223 @@
+🟦 1. /public — Ressources statiques
+
+Contient :
+
+Logo
+
+icônes
+
+favicon
+
+Ces fichiers sont accessibles directement via /public.
+
+🟩 2. /api — Communication avec ton Backend Django
+auth.js contient TOUT :
+
+login()
+
+register()
+
+checkEmail()
+
+checkUsername()
+
+resetPassword()
+
+confirmReset()
+
+getCurrentUser()
+
+updateLanguage()
+
+updateTheme()
+
+Cela centralise toute la communication HTTP.
+
+🟥 3. /components — Composants réutilisables
+ui/
+
+Bibliothèque UI Tailwind :
+
+Button
+
+Input
+
+PasswordInput
+
+Select
+
+FileUpload
+
+Ces composants sont utilisés dans Register, Login, Reset, etc.
+
+layout/AuthLayout.jsx
+
+Le layout des pages d’auth (structure + design).
+
+misc/
+
+Fonctionnalités auxiliaires :
+
+ThemeToggle → dark/light
+
+LanguageSwitcher → fr/en/ar
+
+Loader → chargement
+
+StepProgress → progression multi-step
+
+🟨 4. /context — Contexts globaux de l’app
+✔ AuthContext
+
+Gère :
+
+user
+
+tokens
+
+login/logout
+
+redirection
+
+persistance
+
+✔ LanguageContext
+
+charge les traductions
+
+fournit t("path.to.string")
+
+gère le switch fr/en/ar
+
+synchronise avec backend
+
+✔ ThemeContext
+
+dark/light mode
+
+applique .dark à HTML
+
+sauvegarde dans backend
+
+🟪 5. /hooks — Logique réutilisable
+useAuth → wrapper around AuthContext
+useTheme → easy dark/light
+useLanguage → accès rapide à t()
+useRegisterSteps → logique multi-step
+🟫 6. /pages — Pages principales
+💠 Home.jsx
+
+Page d’accueil avec boutons :
+
+Se connecter
+
+Créer un compte
+
+Changer langue
+
+Dark mode
+
+💠 Login.jsx
+
+Page de connexion.
+
+💠 Register/
+
+Répertoire du multi-step :
+
+StepUser.jsx → Phase 1 (User)
+
+StepStore.jsx → Phase 2 (Store)
+
+StepAgency.jsx → Phase 2 (Agency)
+
+StepAgent.jsx → Phase 2 (Agent)
+
+Register.jsx → contrôle des steps
+
+💠 ResetPasswordRequest.jsx
+
+Envoie email de reset.
+
+💠 ResetPasswordConfirm.jsx
+
+Définit nouveau mot de passe.
+
+💠 RedirectRole.jsx
+
+Redirection auto :
+
+Rôle	Redirection
+STORE	store-app.tondomaine.com
+AGENCY_OWNER	agency-app.tondomaine.com
+AGENCY_AGENT	agent-app.tondomaine.com
+🟦 7. /router
+AppRouter.jsx
+
+Déclare routes :
+
+/ (Home)
+
+/login
+
+/register
+
+/reset-password
+
+/reset-password/confirm
+
+PublicRoute.jsx
+
+Empêche l’accès aux pages publiques si déjà connecté.
+
+🟩 8. /styles
+globals.css :
+
+Tailwind base
+
+classes globales
+
+form.css :
+
+styles dédiés aux formulaires multi-step
+
+🟨 9. /translations
+
+3 fichiers JSON pour fr/en/ar :
+
+fr.js
+en.js
+ar.js
+
+
+Gérés par LanguageContext.
+
+🟧 10. /utils
+validators.js
+
+validations email, password, phone
+
+constants.js
+
+roles
+
+languages
+
+routes backend
+
+storage.js
+
+helpers localStorage (get/set/remove)
+
+🟦 11. App.jsx / main.jsx
+
+L’entrée de l’app.
+Wrappe l’application avec :
+
+ThemeContext
+
+LanguageContext
+
+AuthContext
+
+Router

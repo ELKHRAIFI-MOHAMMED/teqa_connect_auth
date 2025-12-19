@@ -1,0 +1,72 @@
+/* ==============================
+   TAILWIND BASE
+   ============================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==============================
+   GLOBAL RESET
+   ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==============================
+   BODY
+   ============================== */
+body {
+  @apply bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  font-family: "Inter", sans-serif;
+}
+
+/* ==============================
+   PAGE CONTAINER
+   ============================== */
+.page-container {
+  @apply min-h-screen flex items-center justify-center px-4;
+}
+
+/* ==============================
+   CARD
+   ============================== */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6;
+}
+
+/* ==============================
+   TITRES
+   ============================== */
+h1, h2, h3, h4 {
+  @apply font-semibold text-gray-900 dark:text-white;
+}
+
+/* ==============================
+   SCROLLBAR (OPTIONNEL)
+   ============================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ==============================
+   RTL SUPPORT
+   ============================== */
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] input,
+html[dir="rtl"] select,
+html[dir="rtl"] textarea {
+  text-align: right;
+}
