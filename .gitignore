@@ -8,6 +8,13 @@
 # testing
 /coverage
 
+
+# Ignore installers & archives
+*.msi
+*.exe
+*.zip
+
+
 # production
 /build
 
