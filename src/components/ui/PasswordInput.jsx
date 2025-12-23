@@ -114,7 +114,7 @@ const PasswordInputPro = forwardRef(function PasswordInputPro(
                 : "border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-400/40"
             }
           `}
-          placeholder={showLabel ? "" : label}
+          // placeholder={showLabel ? "" : label}
           {...props}
         />
 

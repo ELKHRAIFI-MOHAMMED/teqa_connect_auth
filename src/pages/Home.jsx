@@ -6,6 +6,7 @@ import LanguageSwitcher from "../components/misc/LanguageSwitcher";
 import ThemeToggle from "../components/misc/ThemeToggle";
 import HomeIconButton from "../components/misc/HomeIconButton";
 import { LanguageContext } from "../context/LanguageContext";
+import AppAccueil from "./accueil/AppAccueil";
 
 export default function Home() {
   const { t, lang } = useContext(LanguageContext);
@@ -15,36 +16,35 @@ export default function Home() {
   return (
     <div
       dir={isRTL ? "rtl" : "ltr"}
-      className="min-h-screen flex flex-col items-center justify-center
-                 bg-gray-50 dark:bg-gray-900 text-center px-6"
+      className=""
     >
       {/* HEADER ACTIONS */}
-      <header
+      {/* <header
         className={`absolute top-4 ${isRTL ? "left-4" : "right-4"} flex gap-3`}
       >
         <LanguageSwitcher />
         <ThemeToggle />
         <HomeIconButton/>
-      </header>
+      </header> */}
 
       {/* TITLE */}
-      <h1
+      {/* <h1
         className={`text-4xl font-bold text-gray-900 dark:text-white mb-4
         ${isRTL ? "text-right" : "text-center"}`}
       >
         {t("home.title")} <span className="text-blue-600">SaaS</span>
-      </h1>
+      </h1> */}
 
       {/* SUBTITLE */}
-      <p
+      {/* <p
         className={`text-gray-600 dark:text-gray-300 mb-8 max-w-lg leading-relaxed
         ${isRTL ? "text-right" : "text-center"}`}
       >
         {t("home.subtitle")}
-      </p>
+      </p> */}
 
       {/* BUTTONS */}
-      <div className={`flex gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
+      {/* <div className={`flex gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
         <Link
           to="/login"
           className="px-6 py-2 bg-blue-600 hover:bg-blue-700
@@ -61,7 +61,8 @@ export default function Home() {
         >
           {t("home.register")}
         </Link>
-      </div>
+      </div> */}
+      <AppAccueil />
     </div>
   );
 }

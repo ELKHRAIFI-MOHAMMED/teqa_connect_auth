@@ -14,7 +14,7 @@ export default function AppRouter() {
   return (
     <Routes>
       {/* Page d'accueil */}
-      <Route path="/" element={<Home />} />
+      <Route path="/*" element={<Home />} />
 
       {/* AUTH ROUTES */}
       <Route
